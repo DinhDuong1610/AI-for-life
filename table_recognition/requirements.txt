@@ -1,0 +1,8 @@
+opencv-python
+fastapi
+uvicorn[standard]
+python-multipart
+tqdm
+numpy
+pydantic
+notebook==6.4.12
