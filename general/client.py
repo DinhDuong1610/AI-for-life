@@ -5,9 +5,9 @@ url = 'http://localhost:5000/upload'
 
 # Đường dẫn tới các ảnh cần gửi
 files = [
-    ('files', open('./images/bangdiem5.jpg', 'rb')),
-    ('files', open('./images/bangcuadinh.jpg', 'rb')),
-    ('files', open('./images/ketthuchocphan.png', 'rb'))
+    ('files', open('./images/3_1.png', 'rb')),
+    ('files', open('./images/3_2.png', 'rb')),
+    ('files', open('./images/3_3.png', 'rb'))
 ]
 
 # Gửi yêu cầu POST với các tệp ảnh

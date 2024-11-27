@@ -12,7 +12,7 @@ image_path = "./images/bangdiemcophuong1.png"
 ocr_results = process_image_with_coordinates(image_path, process_image(image_path))
 
 # Xác định khoảng ngưỡng để gom nhóm hàng/cột
-threshold = 5  # Sai số cho phép (đơn vị pixels)
+threshold = 5  
 
 # Gom nhóm tọa độ X và Y
 def group_coordinates(coordinates, threshold):
