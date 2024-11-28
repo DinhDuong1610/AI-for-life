@@ -96,10 +96,10 @@ def process_multiple_images_to_excel(image_paths):
                     cell.alignment = alignment
 
                     # Nếu độ tin cậy < 0.9, tô màu vàng
-                    if confidence < 0.9:
-                        cell.fill = yellow_fill
-                    elif confidence < 0.5:
+                    if confidence < 0.5:
                         cell.fill = red_fill
+                    elif confidence < 0.8:
+                        cell.fill = yellow_fill
                 else:  # Nếu ô trống
                     ws.cell(row=row_idx, column=col_idx, value="")
 
