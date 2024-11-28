@@ -21,18 +21,6 @@ config['device'] = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 detector = Predictor(config)
 
-from vietocr.tool.predictor import Predictor
-from vietocr.tool.config import Cfg
-from PIL import Image
-import numpy as np
-import cv2
-import uuid
-import os
-
-# Cấu hình cho mô hình VietOCR
-config = Cfg.load_config_from_name('vgg_transformer')
-config['device'] = 'cuda' if torch.cuda.is_available() else 'cpu'
-ocr_predictor = Predictor(config)
 
 def process_image_with_coordinates(image_path, coordinates_list):
     try:
@@ -105,16 +93,15 @@ def process_image_with_coordinates(image_path, coordinates_list):
         draw.text((min_x, min_y-1), text, font=font, fill=(174, 26, 31))
 
     # Lấy thông tin title và thực hiện OCR
-    title_results = []  # Danh sách các kết quả title OCR
+    title_results = []  
     for prediction in predictions:
         if prediction["confidence"] > 0.5 :
-            # Lấy bbox của title
             box = prediction["bbox"]
             min_x, min_y, max_x, max_y = map(int, box)
             cropped_img = enhanced_img_pil.crop((min_x, min_y, max_x, max_y))
 
             # Sử dụng OCR VietOCR để nhận diện văn bản trong vùng này
-            text, prob = ocr_predictor.predict(cropped_img, return_prob=True)
+            text, prob = detector.predict(cropped_img, return_prob=True)
             
             title_results.append({
                 "coordinates": [min_x, min_y, max_x, max_y],
