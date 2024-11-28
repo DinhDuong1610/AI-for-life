@@ -3,8 +3,12 @@ import os
 from werkzeug.utils import secure_filename
 from process_ocr import process_multiple_images_to_excel  
 from title_detection.api import predict_from_image  
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+# Cho phép CORS cho tất cả các nguồn
+CORS(app)
 
 # Định nghĩa các cài đặt
 UPLOAD_FOLDER = './image_color'
