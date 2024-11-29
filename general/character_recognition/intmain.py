@@ -68,9 +68,8 @@ def process_image_with_coordinates(image_path, coordinates_list):
 
         min_x, min_y, max_x, max_y = coords
 
-        cropped_img = enhanced_img_pil.crop((min_x, min_y, max_x, max_y))
+        cropped_img = enhanced_img_pil.crop((min_x, min_y, max_x, max_y+1))
 
-        # Thực hiện OCR để nhận diện văn bản
         text, prob = detector.predict(cropped_img, return_prob=True)
 
         if text.lower() == "contraction":
@@ -85,7 +84,7 @@ def process_image_with_coordinates(image_path, coordinates_list):
 
         color = tuple(np.random.randint(0, 256, size=3).tolist())
 
-        alpha = 0.4  # Độ mờ (0.0 đến 1.0)
+        alpha = 0.4  
         cv2.rectangle(overlay, (min_x, min_y), (max_x, max_y), color, cv2.FILLED)
 
         draw.text((min_x, min_y-1), text, font=font, fill=(174, 26, 31))
