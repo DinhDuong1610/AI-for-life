@@ -39,10 +39,6 @@ class Cell(Box):
 class Table(Box):
     name: str = "table"
     cells: List[Cell] = []
-    
-    def get_coordinates(self):
-        # Return a list of coordinates (xmin, ymin, xmax, ymax) for each cell in the table
-        return [(cell.xmin, cell.ymin, cell.xmax, cell.ymax) for cell in self.cells]
 
 
 def get_random_color():
@@ -91,7 +87,6 @@ class TableRecognizer:
 
     def __init__(self, weights_path=None):
         pass
-    
 
     def process(self, image, table_list: list) -> List[Table]:
         # bin
@@ -147,7 +142,6 @@ class TableRecognizer:
                     pass
 
         return tables
-    
 
     @classmethod
     def get_unique_instance(cls):

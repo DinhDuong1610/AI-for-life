@@ -47,8 +47,7 @@ def get_random_color():
 
 def draw(image, table_list: List[Table]):
     vis_image = image.copy()
-    # for table in table_list:
-    #     cv2.rectangle(image, (table.xmin, table.ymin), (table.xmax, table.ymax), (255, 0 ,0), 4)
+
 
     for table in table_list:
         for cell in table.cells:

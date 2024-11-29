@@ -100,6 +100,7 @@ def process_multiple_images_to_excel(image_paths):
                         cell.fill = red_fill
                     elif confidence < 0.9:
                         cell.fill = yellow_fill
+                    
                 else:  # Nếu ô trống
                     ws.cell(row=row_idx, column=col_idx, value="")
 

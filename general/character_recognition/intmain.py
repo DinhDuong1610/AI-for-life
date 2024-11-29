@@ -74,7 +74,7 @@ def process_image_with_coordinates(image_path, coordinates_list):
         text, prob = detector.predict(cropped_img, return_prob=True)
 
         if text.lower() == "contraction":
-            text = ""  # Bỏ qua từ "contraction"
+            text = ""  
 
         results.append({
             "coordinates": coords,
@@ -82,10 +82,8 @@ def process_image_with_coordinates(image_path, coordinates_list):
             "confidence": prob
         })
 
-        if prob < 0.5:
-            color = (255, 0, 0)  # Màu đỏ cho độ tin cậy thấp
-        else:
-            color = tuple(np.random.randint(0, 256, size=3).tolist())
+
+        color = tuple(np.random.randint(0, 256, size=3).tolist())
 
         alpha = 0.4  # Độ mờ (0.0 đến 1.0)
         cv2.rectangle(overlay, (min_x, min_y), (max_x, max_y), color, cv2.FILLED)
