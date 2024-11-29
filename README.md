@@ -3,7 +3,7 @@
 ## B2 : thực hiện chạy file app.py trong thư mục general
 
 - Để gởi yêu cầu api qua server thực hiện gởi qua endpoint : http://127.0.0.1:5000/upload
-- server cho phép gởi nhiều ảnh với key là files và sẽ trả lại api dưới dạng :
+- Server cho phép gởi nhiều ảnh với key là files và sẽ trả lại api dưới dạng :
 ```
   {
   "annotated_images": [
@@ -61,7 +61,7 @@
   ]
   }
 ```
-- Ở đây mình gởi 4 file ảnh nên nó sé trả lại api như sau :
+- Ở đây mình gởi 4 file ảnh nên nó sẽ trả lại api như sau :
 ```
   {
   "annotated_images": [
