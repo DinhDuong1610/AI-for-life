@@ -72,7 +72,7 @@ def process_image_with_coordinates(image_path, coordinates_list):
 
         text, prob = detector.predict(cropped_img, return_prob=True)
 
-        if text.lower() == "contraction":
+        if text.lower() == "contraction" or prob < 0.5:
             text = ""  
 
         results.append({

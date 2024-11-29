@@ -13,7 +13,7 @@ def group_coordinates(coordinates, threshold):
             grouped.append(coord)
     return grouped
 
-def is_row_valid(row_data, max_col, empty_threshold=0.2):
+def is_row_valid(row_data, max_col, empty_threshold=0.07):
     filled_cells = sum(1 for cell in row_data if cell)  
     empty_cells = len(row_data) - filled_cells
     return (empty_cells / max_col) < empty_threshold  
@@ -95,10 +95,10 @@ def process_multiple_images_to_excel(image_paths):
                     cell = ws.cell(row=row_idx, column=col_idx, value=text)
                     cell.alignment = alignment
 
-                    # Nếu độ tin cậy < 0.9, tô màu vàng
+
                     if confidence < 0.5:
                         cell.fill = red_fill
-                    elif confidence < 0.9:
+                    elif confidence < 0.85:
                         cell.fill = yellow_fill
                     
                 else:  # Nếu ô trống
