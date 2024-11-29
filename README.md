@@ -1,9 +1,10 @@
-Cách để chạy server :
+# Cách để chạy server : </br>
 B1 : tải các thư viện cần thiết như : vietocr,werkzeug.utils,flask,numpy,..
 B2 : thực hiện chạy file app.py trong thư mục general
 
 - Để gởi yêu cầu api qua server thực hiện gởi qua endpoint : http://127.0.0.1:5000/upload
 - server cho phép gởi nhiều ảnh với key là files và sẽ trả lại api dưới dạng :
+```
   {
   "annotated_images": [
   {
@@ -59,8 +60,10 @@ B2 : thực hiện chạy file app.py trong thư mục general
   []
   ]
   }
-
-- Ở đây mình gởi 4 file ảnh nên nó sé trả lại api như sau : {
+```
+- Ở đây mình gởi 4 file ảnh nên nó sé trả lại api như sau :
+```
+  {
   "annotated_images": [
   {
   "filename": "4ed6029021694664a1e2b2432dd9bc39.jpg",
@@ -79,7 +82,8 @@ B2 : thực hiện chạy file app.py trong thư mục general
   "url": "/uploads/bf3075c4c1104f3cac1abfb303e2d50a.jpg"
   }
   ],
-- ở trường url sẽ cho phép bạn tải ảnh đã qua xử lý table detection với thứ tự chính xác với thứ tự ảnh bạn call api
+```
+- Ở trường url sẽ cho phép bạn tải ảnh đã qua xử lý table detection với thứ tự chính xác với thứ tự ảnh bạn call api
 - "download_url": "/download/OCR_Results_93b58d91874546e3bd92ace7e1a08216.xlsx", đây sẽ là link dowload file excel được xuất ra khi quá trình xử lý thành công
 - ở trường title_results sẽ là các label title của bảng điểm.
   Chúc thành công...
