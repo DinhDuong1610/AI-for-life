@@ -1,6 +1,6 @@
 # Cách để chạy server : </br>
-B1 : tải các thư viện cần thiết như : vietocr,werkzeug.utils,flask,numpy,..
-B2 : thực hiện chạy file app.py trong thư mục general
+## B1 : tải các thư viện cần thiết như : vietocr,werkzeug.utils,flask,numpy,..
+## B2 : thực hiện chạy file app.py trong thư mục general
 
 - Để gởi yêu cầu api qua server thực hiện gởi qua endpoint : http://127.0.0.1:5000/upload
 - server cho phép gởi nhiều ảnh với key là files và sẽ trả lại api dưới dạng :
