@@ -13,7 +13,7 @@ def group_coordinates(coordinates, threshold):
             grouped.append(coord)
     return grouped
 
-def is_row_valid(row_data, max_col, empty_threshold=0.1):
+def is_row_valid(row_data, max_col, empty_threshold=0.2):
     filled_cells = sum(1 for cell in row_data if cell)  
     empty_cells = len(row_data) - filled_cells
     return (empty_cells / max_col) < empty_threshold  
